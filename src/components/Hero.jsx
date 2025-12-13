@@ -14,7 +14,7 @@ const Hero = () => {
         </div>
 
         <div className="relative z-10">
-          <Lanyard position={[0, 0, 20]} gravity={[0, -60, 0]} />
+          <Lanyard position={[0, 0, 20]} gravity={[0, -30, 0]} />
         </div>
       </div>
 
