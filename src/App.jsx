@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import DateTime from './components/DateTime'
 import Social from './components/Social'
