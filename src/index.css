@@ -9,7 +9,7 @@
 }
 
 .text-color-and-background {
-  background-color: #20201f;
+  background-color: black;
   color: #ee6e4d;
 }
 
@@ -118,6 +118,30 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
+}
+
+/* Scrollbar styling */
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: #ee6e4d;
+  border-radius: 4px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ff8c5a;
+}
+
+/* Firefox scrollbar */
+.terminal-scrollbar {
+  scrollbar-color: #ee6e4d #000000;
+  scrollbar-width: thin;
 }
 
 @layer base {

@@ -14,7 +14,7 @@ const DateTime = () => {
   return (
     <div className="flex-1">
       <p className="text-center text-gray-300 font-mono">
-        {dateTime.toLocaleString()}
+        {dateTime.toLocaleString()}, India
       </p>
     </div>
   );
