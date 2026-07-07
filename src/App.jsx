@@ -6,7 +6,7 @@ import Social from './components/Social'
 
 const App = () => {
   return (
-    <div className='inconsolata-main text-color-and-background h-screen w-full overflow-hidden flex flex-col'>
+    <div className='inconsolata-main text-color-and-background h-auto lg:h-screen w-full overflow-y-auto lg:overflow-hidden flex flex-col'>
       <Navbar />
       <Hero />
       <div className='flex flex-col md:flex-row md:items-center md:justify-around px-8 py-3 gap-2 md:gap-8'>
