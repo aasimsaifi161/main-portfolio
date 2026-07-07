@@ -1,25 +1,26 @@
 import React from 'react'
-import { FiInstagram, FiLinkedin, FiTwitter } from 'react-icons/fi'
+import { FiInstagram, FiLinkedin } from 'react-icons/fi'
+import { FaTelegramPlane } from 'react-icons/fa'
 
 const Social = () => {
   const socialLinks = [
     {
       name: 'Instagram',
-      url: 'https://instagram.com',
+      url: 'https://www.instagram.com/aasiimg/',
       icon: FiInstagram,
       color: '#E4405F'
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com',
+      url: 'https://www.linkedin.com/in/m-aasim',
       icon: FiLinkedin,
       color: '#0077B5'
     },
     {
-      name: 'Twitter',
-      url: 'https://twitter.com',
-      icon: FiTwitter,
-      color: '#1DA1F2'
+      name: 'Telegram',
+      url: 'https://t.me/Mohdaasim161',
+      icon: FaTelegramPlane,
+      color: '#0088cc'
     }
   ]
 

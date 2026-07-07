@@ -6,6 +6,48 @@ import { experience } from '../data/experience'
 import { contact } from '../data/contact'
 import { services } from '../data/services'
 
+const parseLinksAndEmails = (text) => {
+  if (typeof text !== 'string') return text;
+  const regex = /(https?:\/\/[^\s]+|[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}|\+91\s\d{10})/g;
+  const parts = text.split(regex);
+  return parts.map((part, i) => {
+    if (part.startsWith('http://') || part.startsWith('https://')) {
+      return (
+        <a 
+          key={i}
+          href={part} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          className="underline text-[#4a9eff] hover:text-white transition-colors"
+        >
+          {part}
+        </a>
+      );
+    } else if (part.includes('@') && !part.includes(' ') && !part.startsWith('<')) {
+      return (
+        <a 
+          key={i}
+          href={`mailto:${part}`} 
+          className="underline text-[#4a9eff] hover:text-white transition-colors"
+        >
+          {part}
+        </a>
+      );
+    } else if (part.startsWith('+91 ') && part.length === 14) {
+      return (
+        <a 
+          key={i}
+          href={`tel:${part.replace(/\s+/g, '')}`} 
+          className="underline text-[#4a9eff] hover:text-white transition-colors"
+        >
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+};
+
 const Terminal = () => {
   const [history, setHistory] = useState([])
   const [input, setInput] = useState('')
@@ -22,7 +64,7 @@ const Terminal = () => {
       const welcomeMessage = `
 Welcome to My Interactive Terminal Portfolio
 
-Hello! I'm <name>Mohd Aasim</name>, a passionate Web Developer.
+Hello! I'm <name>Mohd Aasim</name>, a passionate Fullstack Developer.
 Type <help> to see available commands.
 
 `
@@ -95,7 +137,8 @@ ${formatCategory('Other', skills.other)}
       const projectList = projects.map(p => 
         `  ► ${p.name} (${p.year})
     ${p.description}
-    Tech: ${p.tech.join(', ')}`
+    Tech: ${p.tech.join(', ')}
+    Link: ${p.link}`
       ).join('\n\n')
 
       return `
@@ -144,8 +187,7 @@ ${expList}
 
   GitHub:      ${contact.github}
   LinkedIn:    ${contact.linkedin}
-  Twitter:     ${contact.twitter}
-  Portfolio:   ${contact.portfolio}
+  Telegram:    ${contact.telegram}
 
   ${contact.message}
 `
@@ -155,7 +197,7 @@ ${expList}
       const welcomeMessage = `
 Welcome to My Interactive Terminal Portfolio
 
-Hello! I'm <name>Mohd Aasim</name>, a passionate Web Developer.
+Hello! I'm <name>Mohd Aasim</name>, a passionate Fullstack Developer.
 Type <help> to see available commands.
 
 `
@@ -269,7 +311,7 @@ Type <help> to see available commands.
                   part.startsWith('<cmd>') && part.endsWith('</cmd>') ? (
                     <span key={idx} className='text-white font-bold'>{part.replace(/<\/?cmd>/g, '')}</span>
                   ) : (
-                    <span key={idx}>{part}</span>
+                    <span key={idx}>{parseLinksAndEmails(part)}</span>
                   )
                 )}
               </div>

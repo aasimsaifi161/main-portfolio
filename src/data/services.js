@@ -23,12 +23,12 @@ export const services = [
     description: "Converting design mockups into beautiful, functional, and accessible web interfaces",
     technologies: ["Figma to Code", "Design Systems", "Responsive Design"]
   },
-  {
-    id: 5,
-    title: "3D Web Experiences",
-    description: "Creating interactive 3D visualizations and immersive web experiences using Three.js and WebGL",
-    technologies: ["Three.js", "WebGL", "React Three Fiber"]
-  },
+  // {
+  //   id: 5,
+  //   title: "3D Web Experiences",
+  //   description: "Creating interactive 3D visualizations and immersive web experiences using Three.js and WebGL",
+  //   technologies: ["Three.js", "WebGL", "React Three Fiber"]
+  // },
   {
     id: 6,
     title: "Performance Optimization",

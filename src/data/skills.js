@@ -4,8 +4,7 @@ export const skills = {
     "Next.js",
     "TypeScript",
     "Tailwind CSS",
-    "Three.js",
-    "Vue.js"
+    "Framer Motion"
   ],
   backend: [
     "Node.js",
@@ -13,15 +12,15 @@ export const skills = {
     "MongoDB",
     "PostgreSQL",
     "Firebase",
-    "REST APIs"
+    "REST APIs",
+    "Python"
   ],
   tools: [
     "Git & GitHub",
     "Docker",
     "Webpack",
     "Vite",
-    "VS Code",
-    "Figma"
+    "VS Code"
   ],
   other: [
     "Web Performance",
